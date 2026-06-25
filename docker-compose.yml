@@ -1,0 +1,49 @@
+version: '3.8'
+
+services:
+  # COMPUTADOR CLIENTE (PC-1)
+  pc1:
+    image: alpine:latest
+    container_name: lab_pc1
+    command: sh -c "ip route add default via 192.168.1.254 && sleep infinity"
+    cap_add:
+      - NET_ADMIN
+    networks:
+      vlan10:
+        ipv4_address: 192.168.1.10
+
+  # SERVIDOR WEB (Nginx)
+  servidor_web:
+    image: nginx:alpine
+    container_name: lab_servidor
+    command: sh -c "ip route add default via 192.168.2.254 && nginx -g 'daemon off;'"
+    cap_add:
+      - NET_ADMIN
+    networks:
+      vlan20:
+        ipv4_address: 192.168.2.10
+
+  # O ROTEADOR da Rede
+  roteador:
+    image: alpine:latest
+    container_name: lab_roteador
+    command: sh -c "sysctl -w net.ipv4.ip_forward=1 && sleep infinity"
+    cap_add:
+      - NET_ADMIN
+    networks:
+      vlan10:
+        ipv4_address: 192.168.1.254
+      vlan20:
+        ipv4_address: 192.168.2.254
+
+networks:
+  vlan10:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 192.168.1.0/24
+  vlan20:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 192.168.2.0/24
