@@ -35,6 +35,41 @@
                 <div class="text-xs text-slate-500 mt-2">Gateway: 192.168.2.254</div>
             </div>
         </div>
+
+        <div class="bg-slate-800 p-6 rounded-3xl border border-slate-700/80 shadow-lg">
+            <h2 class="text-2xl font-semibold text-emerald-300 mb-4">Topologia Conectada</h2>
+            <div class="flex flex-col md:flex-row items-center justify-between gap-4 text-left">
+                <div class="flex-1 bg-slate-900/80 p-4 rounded-2xl border border-blue-500/30">
+                    <div class="text-sm text-blue-300 font-semibold">PC Cliente</div>
+                    <div class="mt-2 text-slate-100">192.168.1.10</div>
+                    <div class="text-xs text-slate-500 mt-1">VLAN 10</div>
+                </div>
+
+                <div class="flex flex-col items-center gap-2">
+                    <div class="text-slate-400 text-xs uppercase tracking-[0.2em]">via</div>
+                    <div class="w-24 h-px bg-slate-600"></div>
+                    <div class="text-slate-300 text-sm">Link 1</div>
+                </div>
+
+                <div class="flex-1 bg-slate-900/80 p-4 rounded-2xl border border-emerald-500/30">
+                    <div class="text-sm text-emerald-300 font-semibold">Roteador Central</div>
+                    <div class="mt-2 text-slate-100">192.168.1.254 / 192.168.2.254</div>
+                    <div class="text-xs text-slate-500 mt-1">IP Forwarding</div>
+                </div>
+
+                <div class="flex flex-col items-center gap-2">
+                    <div class="text-slate-400 text-xs uppercase tracking-[0.2em]">via</div>
+                    <div class="w-24 h-px bg-slate-600"></div>
+                    <div class="text-slate-300 text-sm">Link 2</div>
+                </div>
+
+                <div class="flex-1 bg-slate-900/80 p-4 rounded-2xl border border-purple-500/30">
+                    <div class="text-sm text-purple-300 font-semibold">Servidor Web</div>
+                    <div class="mt-2 text-slate-100">192.168.2.10</div>
+                    <div class="text-xs text-slate-500 mt-1">VLAN 20</div>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 </html>
