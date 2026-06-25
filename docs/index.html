@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard do Laboratorio de Redes</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body class="bg-slate-900 text-slate-100 font-sans p-6">
+    <div class="max-w-4xl mx-auto">
+        <header class="mb-10 text-center">
+            <h1 class="text-4xl font-bold text-emerald-400 mb-2">🌐 Lab de Redes Multi-VLAN</h1>
+            <p class="text-slate-400">Simulacao de Roteamento Estatico e Servidor Web com Docker</p>
+        </header>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center mb-10">
+            <div class="bg-slate-800 p-6 rounded-xl border border-blue-500/30">
+                <span class="bg-blue-500/10 text-blue-400 text-xs px-2 py-1 rounded font-mono">VLAN 10</span>
+                <h3 class="text-xl font-bold mt-2">💻 PC Cliente (PC1)</h3>
+                <p class="text-slate-400 font-mono mt-1 text-sm">IP: 192.168.1.10</p>
+                <div class="text-xs text-slate-500 mt-2">Gateway: 192.168.1.254</div>
+            </div>
+
+            <div class="bg-slate-800 p-6 rounded-xl border border-emerald-500/50 flex flex-col justify-center items-center">
+                <span class="bg-emerald-500/10 text-emerald-400 text-xs px-2 py-1 rounded font-mono">IP Forwarding</span>
+                <h3 class="text-xl font-bold mt-2">🎛️ Roteador Central</h3>
+                <p class="text-slate-400 font-mono text-xs mt-2">Interface 1: 192.168.1.254</p>
+                <p class="text-slate-400 font-mono text-xs">Interface 2: 192.168.2.254</p>
+            </div>
+
+            <div class="bg-slate-800 p-6 rounded-xl border border-purple-500/30">
+                <span class="bg-purple-500/10 text-purple-400 text-xs px-2 py-1 rounded font-mono">VLAN 20</span>
+                <h3 class="text-xl font-bold mt-2">🖥️ Servidor Web</h3>
+                <p class="text-slate-400 font-mono mt-1 text-sm">IP: 192.168.2.10</p>
+                <div class="text-xs text-slate-500 mt-2">Gateway: 192.168.2.254</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
